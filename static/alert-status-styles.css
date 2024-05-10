@@ -1,0 +1,35 @@
+/*
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+*/
+
+#alert-window-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+h1
+{
+    margin: 5px;
+    padding: 5px;
+
+}
+
+table
+{
+    border: 1px solid var(--accent-color-white);
+    width: 80%;
+}
+
+th, td
+{
+    text-align: left;
+    padding: 4px;
+}

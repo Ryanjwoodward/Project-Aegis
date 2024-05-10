@@ -1,0 +1,63 @@
+/*
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+*/
+
+:root
+{
+    --primary-color: #7762A4;
+    --secondary-color: #3A414A;
+    --accent-color-white: #ffffff;
+    --accent-color-pink: #FF1E6D;
+    --accent-color-orange: #FFC000;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 
+    Styling of the Nav-bar template container
+    - For child tags see 'navbar-styles.css'
+*/
+#nav-bar-parent
+{
+    height: 100vh;
+    width: 15%;    
+}
+
+
+
+/* 
+    Styling of the windows (right hand side of the screen) container
+    - For child tags see 'class-window-styles.css' or
+       '<window name>-window-styles.css'
+*/
+#main-content-parent
+{
+    display: flex;
+    flex-direction: column;
+
+    background: rgb(104,108,112);
+    background: linear-gradient(135deg, rgba(104,108,112,1) 8%, rgba(58,65,74,1) 35%);
+    height: 100vh;
+    width: 85%;
+    margin: 0;
+    padding: 0;
+}

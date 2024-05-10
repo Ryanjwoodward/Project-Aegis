@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+-->
+  <!------------------------------------------ HEAD START ----------------------------------------------->  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aegis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='inventory-transactions-window-styles.css') }}">
+  </head>
+
+  <!------------------------------------------ BODY START ----------------------------------------------->
+  <body>
+
+    <h1 id="window-title"> Inventory Transactions </h1>
+
+    <section id="inventory-transaction-window-child">
+
+      <!--
+        This 'div' is the primary container for the Radio buttons.
+      -->
+      <div id="radio-buttons-container" class="window-content-container">
+        
+        <div class="radio-button-wrapper" onclick="showForm('return-item-form')">
+          <input class="transaction-selection-button" type="radio" id="return-item-button" name="inventory-transactions" value="Return an Item">
+          <label for="return-item-button"> Return an Item </label>
+        </div>
+  
+        <div class="radio-button-wrapper" onclick="showForm('checkout-item-form')">
+          <input class="transaction-selection-button" type="radio" id="checkout-item-button" name="inventory-transactions" value="Check Out an Item">
+          <label for="checkout-item-button"> Check Out an Item </label>
+        </div>
+  
+        <div class="radio-button-wrapper" onclick="showForm('create-item-form')">
+          <input class="transaction-selection-button" type="radio" id="create-item-button" name="inventory-transactions" value="Create an Item">
+          <label for="create-item-button"> Create an Item </label>
+        </div>
+  
+        <div class="radio-button-wrapper" onclick="showForm('update-item-form')">
+          <input class="transaction-selection-button" type="radio" id="update-item-button" name="inventory-transactions" value="Update an Item">
+          <label for="update-item-button"> Update an Item </label>
+        </div>
+  
+        <div class="radio-button-wrapper" onclick="showForm('delete-item-form')">
+          <input class="transaction-selection-button" type="radio" id="delete-item-button" name="inventory-transactions" value="Delete an Item">
+          <label for="delete-item-button"> Delete an Item </label>
+        </div>
+      </div>
+
+      <!--
+        This 'div' is the primary container for the forms for the user
+        to perform a variety of inventory transactions.
+      -->
+      <div id="forms-container" class="window-content-container">
+
+        <!-----------------------RETURN FORM----------------------->
+        <div id="return-item-form" class="inventory-transaction-form">
+
+          <form action="/return-item" method="POST" return-item-form">
+
+            <div class="checkout-form-wrapper">
+              <label for="barcode-number">Barcode Number</label>
+              <input type="text" id="barcode-number" class="checkout-form-field" name="barcode-number" required><br><br>
+            </div>
+
+            <div class="button-wrapper checkout-form-wrapper">
+              <input type="submit" value="Return" class="inventory-transaction-btn">
+            </div>
+          </form>
+
+        </div>
+
+        <!-----------------------CHECKOUT FORM----------------------->
+        <div id="checkout-item-form" class="inventory-transaction-form">
+
+          <form action="/checkout-item" method="POST" id="checkout-form">
+            <div class="checkout-form-wrapper">
+              <label for="barcode-number">Barcode Number</label>
+              <input type="text" id="barcode-number" class="checkout-form-field" name="barcode-number" required><br><br>
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" class="checkout-form-field" name="full-name" required><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="student-id">Student ID</label>
+              <input type="text" id="student-id" class="checkout-form-field" name="student-id" required><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="phone-number">Phone Number</label>
+              <input type="tel" id="phone-number" class="checkout-form-field" name="phone-number" required><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="date-checked-out">Date Checked Out</label>
+              <input type="date" id="date-checked-out" class="checkout-form-field" name="date-checked-out" required><br><br>
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="return-due-date">Return Due Date</label>
+              <input type="date" id="return-due-date" class="checkout-form-field" name="return-due-date" required><br><br>  
+            </div>
+                      
+            <div class="button-wrapper checkout-form-wrapper">
+              <input type="submit" value="Check Out" class="inventory-transaction-btn">
+            </div>
+          </form>
+
+        </div>
+
+        <!-----------------------CREATE ITEM FORM----------------------->
+        <div id="create-item-form" class="inventory-transaction-form">
+
+          <form action="/create-item" method="POST" id="create-item-form">
+            <div class="checkout-form-wrapper">
+              <label for="barcode-number">Barcode Number</label>
+              <input type="text" id="barcode-number" class="checkout-form-field" name="barcode-number" required><br><br>
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="item-name">Item Name</label>
+              <input type="text" id="item-name" class="checkout-form-field" name="item-name" required><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="item-description">Item description</label>
+              <input type="text" id="item-description" class="checkout-form-field" name="item-description" required><br><br>  
+            </div>
+
+                      
+            <div class="button-wrapper checkout-form-wrapper">
+              <input type="submit" value="Submit" class="inventory-transaction-btn">
+            </div>
+          </form>
+
+        </div>
+
+        <!-----------------------UPDATE ITEM FORM----------------------->
+        <div id="update-item-form" class="inventory-transaction-form">
+
+          <form action="/update-item" method="POST" id="checkout-form">
+            <div class="checkout-form-wrapper">
+              <label for="barcode-number">Barcode Number</label>
+              <input type="text" id="barcode-number" class="checkout-form-field" name="barcode-number" required><br><br>
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="item-name">Item Name</label>
+              <input type="text" id="item-name" class="checkout-form-field" name="item-name"><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="item-description">Item description</label>
+              <input type="text" id="item-description" class="checkout-form-field" name="item-description"><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" class="checkout-form-field" name="full-name" ><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="student-id">Student ID</label>
+              <input type="text" id="student-id" class="checkout-form-field" name="student-id" ><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="phone-number">Phone Number</label>
+              <input type="tel" id="phone-number" class="checkout-form-field" name="phone-number" ><br><br>  
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="date-checked-out">Date Checked Out</label>
+              <input type="date" id="date-checked-out" class="checkout-form-field" name="date-checked-out" ><br><br>
+            </div>
+
+            <div class="checkout-form-wrapper">
+              <label for="return-due-date">Return Due Date</label>
+              <input type="date" id="return-due-date" class="checkout-form-field" name="return-due-date" ><br><br>  
+            </div>
+                      
+            <div class="button-wrapper checkout-form-wrapper">
+              <input type="submit" value="Update Item" class="inventory-transaction-btn">
+            </div>
+          </form>
+
+        </div>
+
+        <!-----------------------DELETE FORM----------------------->
+        <div id="delete-item-form" class="inventory-transaction-form">
+
+          <form action="/delete-item" method="POST" id=" delete-item-form">
+
+            <div class="checkout-form-wrapper">
+              <label for="barcode-number">Barcode Number</label>
+              <input type="text" id="barcode-number" class="checkout-form-field" name="barcode-number" required><br><br>
+            </div>
+                      
+            <div class="button-wrapper checkout-form-wrapper">
+              <input type="submit" value="Delete" class="inventory-transaction-btn">
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </section>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

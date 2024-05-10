@@ -1,0 +1,56 @@
+/*
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+*/
+
+:root
+{
+    --primary-color: #7762A4;
+    --secondary-color: #3A414A;
+    --tertiary-color: #554378;
+    --accent-color-white: #ffffff;
+    /* drop shadow, gradient */
+}
+
+#display-database-window
+{
+    background-color: var(--primary-color);
+    width: 96.3%;
+    height: 300px;
+    margin: 20px 20px 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#inventory-transaction-window
+{
+    background-color: var(--primary-color);
+    width: 96.3%;
+    height: 300px;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+#view-return-status-window
+{
+    background-color: var(--primary-color);
+    width: 96.3%;
+    height: 300px;
+    margin: 10px 20px 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* THESE WILL NEED ^ to be edited so the size changes with the page. 
+the screen will not be expanded past the viewport, there will be no scrolling, 
+except within the individual windows*/

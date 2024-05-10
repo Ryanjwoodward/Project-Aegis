@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+-->
+  <!------------------------------------------ HEAD START ----------------------------------------------->  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aegis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navbar-styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+        <!-- Nav bar that allows users to show/hide the pages of the application -->
+        <nav id="nav-bar-container">
+            
+            <!-- This div is a container to the Aegis Logo-->
+            <div id="logo-parent" class="nav-bar-child">
+
+                <img src="{{ url_for('static', filename='images/aegis-logo-white.png') }}" alt="" id="aegis-logo" class="nav-bar-logo">            
+                <img src="{{ url_for('static', filename='images/aegis-words-logo-white.png') }}" alt="" id="aegis-words-logo" class="nav-bar-logo">            
+                
+                <hr id="divider">
+            </div>
+
+            <!-- This div is a container for the Icons of the Navbar -->
+            <div id="icons-parent" class="nav-bar-child">
+            
+                    <!-- Include font awesome Icons, but also some fall back images or text -->
+                    <i class="fa fa-database" aria-hidden="true" style="font-size: 80px;" onclick="toggleWindow('display-database-window')"></i>
+                    <i class="fa fa-qrcode" aria-hidden="true" style="font-size: 80px;" onclick="toggleWindow('inventory-transaction-window')"></i>
+                    <i class="fa fa-calendar" aria-hidden="true" style="font-size: 80px;" onclick="toggleWindow('view-return-status-window')"></i>
+            </div>
+
+
+        </nav>
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

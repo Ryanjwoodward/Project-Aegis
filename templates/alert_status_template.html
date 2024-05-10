@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+-->
+  <!------------------------------------------ HEAD START ----------------------------------------------->  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aegis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='global-styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alert-status-styles.css') }}">
+  </head>
+
+  <!------------------------------------------ BODY START ----------------------------------------------->
+  <body>
+
+    <div id="alert-window-container">
+    
+      <h1 id="table-title">Items Past Return Due Date</h1>
+      <table>
+          <tr>
+              <th>ID</th>
+              <th>Item Name</th>
+              <th>Description</th>
+              <th>Checked Out</th>
+              <th>Borrower Name</th>
+              <th>Borrower Student ID</th>
+              <th>Borrower Phone</th>
+              <th>Barcode Number</th>
+              <th>Borrowed Date</th>
+              <th>Return Due Date</th> <!-- New column header -->
+          </tr>
+          {% for item in late_items %}
+          <tr>
+              <td>{{ item[0] }}</td>
+              <td>{{ item[1] }}</td>
+              <td>{{ item[2] }}</td>
+              <td>{{ "Yes" if item[3] else "No" }}</td>
+              <td>{{ item[4] }}</td>
+              <td>{{ item[5] }}</td>
+              <td>{{ item[6] }}</td>
+              <td>{{ item[7] }}</td>
+              <td>{{ item[8] }}</td>
+              <td>{{ item[9] }}</td> <!-- Display return due date -->
+          </tr>
+          {% endfor %}
+      </table>
+  </div>
+
+  </body>
+</html>

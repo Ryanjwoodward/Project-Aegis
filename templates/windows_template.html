@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+-->
+  <!------------------------------------------ HEAD START ----------------------------------------------->  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aegis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='windows-class-styles.css') }}">
+  </head>
+
+  <!------------------------------------------ BODY START ----------------------------------------------->
+  <body>
+
+        <!-- 
+            This Window will contain the table of the database and
+            the forms, etc. to allow the user to perform CRUD
+            operations queries on the Database.
+        -->
+        <div id="display-database-window" >
+
+            {% include 'display_database_template.html' %}
+        </div>
+
+        <!--
+            This window will contain the forms, buttons, and other
+            elements necessary for users to check-out and return
+            items to the database.
+        -->
+        <div id="inventory-transaction-window">
+           
+            {% include 'inventory_transaction_template.html' %}
+        </div>
+
+        <!--
+            This window will contain a display of any alerts 
+            regarding check-out items that are past due.
+        -->
+        <div id="view-return-status-window">
+
+            {% include 'alert_status_template.html' %}
+        </div>
+        
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+================================================================>
+|   Author      |   Ryan Woodward
+|   Date        |   May 2024
+|   Project     |   Aegis (Inventory System)
+================================================================>
+-->
+  <!------------------------------------------ HEAD START ----------------------------------------------->  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aegis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='global-styles.css') }}">
+  </head>
+  
+  <!------------------------------------------ BODY START ----------------------------------------------->
+  <body>
+
+    <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- -->
+    <!--                        NAV BAR                        -->
+    <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- -->
+    <!--
+        This part of the body consists of the left hand side of the screen.
+        This section is dedicate for/only the Nav bar.
+    -->
+    <section id="nav-bar-parent" class="body-section">
+
+        <!-- Include the template for the Navbar (left hand side of the screen) -->
+        {% include 'navbar_template.html' %}
+    </section>
+
+    <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- -->
+    <!--                        WINDOWS                        -->
+    <!-- ----- ----- ----- ----- ----- ----- ----- ----- ----- -->
+    <!--
+        This part of the body is the right hand side of the screen.
+        By Default will show the information of all items in the SQLite Database.
+        By clicking on the Icons in the Nav Bar the user can expand and collapse thew
+        sections contained in this section namely: 
+        DB Table & management, item checkout/return, Alerts
+    -->
+    <section id="main-content-parent" class="body-section">
+
+        {% include 'windows_template.html' %}
+    </section>
+
+  </body>
+</html>
