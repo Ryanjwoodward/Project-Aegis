@@ -1,4 +1,4 @@
-![Untitled video - Made with Clipchamp](https://github.com/user-attachments/assets/06aea9b0-60cb-4f41-a7be-f5cb03cbb46d)![image](https://github.com/user-attachments/assets/70192bc2-3c20-4350-a609-425aa598de47) 
+![image](https://github.com/user-attachments/assets/70192bc2-3c20-4350-a609-425aa598de47) 
 # Project Aegis
 
 ***
