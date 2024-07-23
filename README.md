@@ -14,6 +14,6 @@ Project Aegis is a simple inventory management system meant to be installed on a
 
 
 ## Demoes
-<img src="https://user-images.githubusercontent.com/48807137/235379450-240b387a-f405-42e9-8062-93f3e08faf60.png" width="25"/>_Full Demo:_
+<img src="https://user-images.githubusercontent.com/48807137/235379450-240b387a-f405-42e9-8062-93f3e08faf60.png" width="25"/>_Full Demo:_ https://youtu.be/No0o3TDw20Y
 
 ![Untitled video - Made with Clipchamp](https://github.com/user-attachments/assets/3da76d33-661d-40c7-8824-66f9ba6cb520)
